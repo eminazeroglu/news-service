@@ -1,11 +1,12 @@
 {
     "name": "eminazeroglu/news",
     "description": "Muxtelif saytlardan xeberleri ceken bot",
+    "keywords": ["news", "bot"],
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Eminazeroglu\\News\\": "src/"
+            "Azeroglu\\News\\": "src/"
         }
     },
     "authors": [
@@ -21,10 +22,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Azeroglu\\Telegram\\TelegramServiceProvider"
+                "Azeroglu\\News\\NewsServiceProvider"
             ],
             "aliases": {
-                "Telegram": "Azeroglu\\Telegram\\Facades\\Telegram"
+                "News": "Azeroglu\\News\\Facades\\Telegram"
             }
         }
     }
