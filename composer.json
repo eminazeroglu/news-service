@@ -1,0 +1,31 @@
+{
+    "name": "eminazeroglu/news",
+    "description": "Muxtelif saytlardan xeberleri ceken bot",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Eminazeroglu\\News\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "eminazeroglu",
+            "email": "azeroglu.emin05@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "^7.0.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Azeroglu\\Telegram\\TelegramServiceProvider"
+            ],
+            "aliases": {
+                "Telegram": "Azeroglu\\Telegram\\Facades\\Telegram"
+            }
+        }
+    }
+}
