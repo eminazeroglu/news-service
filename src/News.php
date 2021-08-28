@@ -55,16 +55,4 @@ class News extends BotService
 
         return $links;
     }
-
-    /*
-     * Get List
-     * */
-    public function getList($url = null)
-    {
-        /*$title   = $page->title('.news .news-inner h1');
-        $photo   = $page->photo('.news .news-img');
-        $content = preg_replace('/<h1>(.*)<\/h1>/', null, $page->content('.news .news-inner'));*/
-
-        return $this->oxuAz();
-    }
 }

@@ -10,12 +10,6 @@ class BotService
     protected $html;
     protected $links = [];
     protected $page;
-
-    protected function __construct()
-    {
-        $this->dom = $this->domParser();
-    }
-
     /*
      * Dom Parser
      * */
@@ -30,7 +24,7 @@ class BotService
     protected function request($url)
     {
         try {
-            $this->html = $this->dom->load($url);
+            $this->html = $this->domParser()->load($url);
             return $this;
         }
         catch (\Exception $e) {
@@ -80,7 +74,7 @@ class BotService
     protected function dom($link)
     {
         try {
-            return $this->dom->load($link);
+            return $this->domParser()->load($link);
         }
         catch (\Exception $e) {
             return $e->getMessage();
