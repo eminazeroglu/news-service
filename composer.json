@@ -27,6 +27,6 @@
         }
     },
     "require": {
-        "eminazeroglu/bot": "v1.0.2"
+        "eminazeroglu/bot": "v1.0.3"
     }
 }

@@ -14,7 +14,7 @@ class Bot
     /*
      * Dom Parser
      * */
-    protected function domParser()
+    protected function domParser(): Dom
     {
         return new Dom();
     }
@@ -55,7 +55,7 @@ class Bot
     /*
      * Limit
      * */
-    protected function limit($limit)
+    protected function limit($limit): Bot
     {
         $this->links = array_splice($this->links, 0, $limit);
         return $this;
@@ -64,7 +64,7 @@ class Bot
     /*
      * Get
      * */
-    protected function get()
+    protected function get(): array
     {
         return $this->links;
     }
@@ -85,7 +85,7 @@ class Bot
     /*
      * Text
      * */
-    protected function text($dom, $element)
+    protected function text($dom, $element): ?string
     {
         try {
             return trim($dom->find($element)->text);
@@ -98,7 +98,7 @@ class Bot
     /*
      * Src
      * */
-    protected function src($dom, $element)
+    protected function src($dom, $element): ?string
     {
         try {
             return trim($dom->find($element)->src);
@@ -111,7 +111,7 @@ class Bot
     /*
      * Inner Html
      * */
-    protected function innerHtml($dom, $element)
+    protected function innerHtml($dom, $element): ?string
     {
         try {
             return trim($dom->find($element)->innerHtml);
@@ -124,7 +124,7 @@ class Bot
     /*
      * Each
      * */
-    public function each($links, $callback)
+    protected function each($links, $callback): ?array
     {
         $items = [];
         foreach ($links as $link):
@@ -144,7 +144,7 @@ class Bot
     /*
      * Response
      * */
-    public function newsResponse($title, $category, $content, $photo, $date, $link)
+    protected function newsResponse($title, $category, $content, $photo, $date, $link): array
     {
         return [
             'title'    => $title,

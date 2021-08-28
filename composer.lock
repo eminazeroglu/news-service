@@ -4,26 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "61e9c33dadf4889e99cb81a7c0206273",
+    "content-hash": "21fa871030de0ac996444ff8a0ede6c8",
     "packages": [
         {
             "name": "eminazeroglu/bot",
-            "version": "dev-main",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eminazeroglu/bot-service.git",
-                "reference": "f1ae0d91f3f0922fb856d9bf80b27b1a31714186"
+                "reference": "65f2629a289abeb77d6190b47f43aff6e6a4554f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eminazeroglu/bot-service/zipball/f1ae0d91f3f0922fb856d9bf80b27b1a31714186",
-                "reference": "f1ae0d91f3f0922fb856d9bf80b27b1a31714186",
+                "url": "https://api.github.com/repos/eminazeroglu/bot-service/zipball/65f2629a289abeb77d6190b47f43aff6e6a4554f",
+                "reference": "65f2629a289abeb77d6190b47f43aff6e6a4554f",
                 "shasum": ""
             },
             "require": {
                 "paquettg/php-html-parser": "^2.2"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -57,9 +56,9 @@
             ],
             "support": {
                 "issues": "https://github.com/eminazeroglu/bot-service/issues",
-                "source": "https://github.com/eminazeroglu/bot-service/tree/v1.0.1"
+                "source": "https://github.com/eminazeroglu/bot-service/tree/v1.0.3"
             },
-            "time": "2021-08-28T16:49:36+00:00"
+            "time": "2021-08-28T17:16:25+00:00"
         },
         {
             "name": "paquettg/php-html-parser",
@@ -173,9 +172,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "eminazeroglu/bot": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

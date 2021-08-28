@@ -2,24 +2,23 @@
     "packages": [
         {
             "name": "eminazeroglu/bot",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
+            "version": "v1.0.3",
+            "version_normalized": "1.0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eminazeroglu/bot-service.git",
-                "reference": "f1ae0d91f3f0922fb856d9bf80b27b1a31714186"
+                "reference": "65f2629a289abeb77d6190b47f43aff6e6a4554f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eminazeroglu/bot-service/zipball/f1ae0d91f3f0922fb856d9bf80b27b1a31714186",
-                "reference": "f1ae0d91f3f0922fb856d9bf80b27b1a31714186",
+                "url": "https://api.github.com/repos/eminazeroglu/bot-service/zipball/65f2629a289abeb77d6190b47f43aff6e6a4554f",
+                "reference": "65f2629a289abeb77d6190b47f43aff6e6a4554f",
                 "shasum": ""
             },
             "require": {
                 "paquettg/php-html-parser": "^2.2"
             },
-            "time": "2021-08-28T16:49:36+00:00",
-            "default-branch": true,
+            "time": "2021-08-28T17:16:25+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -54,7 +53,7 @@
             ],
             "support": {
                 "issues": "https://github.com/eminazeroglu/bot-service/issues",
-                "source": "https://github.com/eminazeroglu/bot-service/tree/v1.0.1"
+                "source": "https://github.com/eminazeroglu/bot-service/tree/v1.0.3"
             },
             "install-path": "../eminazeroglu/bot"
         },
