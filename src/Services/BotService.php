@@ -10,6 +10,7 @@ class BotService
     protected $html;
     protected $links = [];
     protected $page;
+
     /*
      * Dom Parser
      * */
@@ -82,12 +83,12 @@ class BotService
     }
 
     /*
-     * Title
+     * Text
      * */
-    protected function title($dom, $element)
+    protected function text($dom, $element)
     {
         try {
-            return $dom->find($element)->text;
+            return trim($dom->find($element)->text);
         }
         catch (\Exception $e) {
             return null;
@@ -95,12 +96,12 @@ class BotService
     }
 
     /*
-     * Photo
+     * Src
      * */
-    protected function photo($dom, $element)
+    protected function src($dom, $element)
     {
         try {
-            return $dom->find($element)->src;
+            return trim($dom->find($element)->src);
         }
         catch (\Exception $e) {
             return null;
@@ -108,12 +109,12 @@ class BotService
     }
 
     /*
-     * Content
+     * Inner Html
      * */
-    protected function content($dom, $element)
+    protected function innerHtml($dom, $element)
     {
         try {
-            return $dom->find($element)->innerHtml;
+            return trim($dom->find($element)->innerHtml);
         }
         catch (\Exception $e) {
             return null;
@@ -121,28 +122,37 @@ class BotService
     }
 
     /*
-     * Date
+     * Each
      * */
-    protected function date($dom, $element)
+    public function each($links, $callback)
     {
-        try {
-            return $dom->find($element)->innerHtml;
-        }
-        catch (\Exception $e) {
-            return null;
-        }
+        $items = [];
+        foreach ($links as $link):
+            try {
+                if (is_callable($callback)):
+                    $dom     = $this->dom($link);
+                    $items[] = call_user_func($callback, $dom, $link);
+                endif;
+            }
+            catch (\Exception $e) {
+                return null;
+            }
+        endforeach;
+        return $items;
     }
 
     /*
-     * Category
+     * Response
      * */
-    protected function category($dom, $element)
+    public function newsResponse($title, $category, $content, $photo, $date, $link)
     {
-        try {
-            return $dom->find($element)->text;
-        }
-        catch (\Exception $e) {
-            return null;
-        }
+        return [
+            'title'    => $title,
+            'category' => $category,
+            'content'  => $content,
+            'photo'    => $photo,
+            'date'     => $date,
+            'link'     => $link,
+        ];
     }
 }

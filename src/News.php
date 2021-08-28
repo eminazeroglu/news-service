@@ -9,50 +9,76 @@ class News extends BotService
     /*
      * Oxu Az
      * */
-    public function oxuAz($limit = 5)
+    public function oxuAz($limit = 10)
     {
         $links = $this
             ->request('https://oxu.az/')
             ->links('.news-list .news-i .news-i-inner', 'https://oxu.az')
             ->limit($limit)
             ->get();
-        $items = [];
-        foreach ($links as $link):
-            try {
-                $dom      = $this->dom($link);
-                $dateHtml = $this->date($dom, '.news .when');
-                $dateHtml = $this->domParser()->load($dateHtml);
-                $day      = trim($dateHtml->find('.when-date .date-day')->text, '&nbsp');
-                $month = $dateHtml->find('.when-date .date-month')->text;
-                $year = $dateHtml->find('.when-date .date-year')->text;
-                $time = $dateHtml->find('.when-time')->text;
-                $items[] = [
-                    'link' => $link,
-                    'title'   => $this->title($dom, '.news .news-inner h1'),
-                    'photo'   => $this->photo($dom, '.news .news-img'),
-                    'content' => preg_replace('/<h1>(.*)<\/h1>/', null, $this->content($dom, '.news .news-inner')),
-                    'date' => $day . '-' . $month . '-' . $year . ' ' . $time,
-                    'category' => $this->category($dom, '.nav-container .nav-i.nav-i_current')
-                ];
-            }
-            catch (\Exception $e) {
-
-            }
-        endforeach;
-        return $items;
+        return $this->each($links, function ($dom, $link) {
+            $dateHtml = $this->innerHtml($dom, '.news .when');
+            $dateHtml = $this->domParser()->load($dateHtml);
+            $day      = trim($dateHtml->find('.when-date .date-day')->text, '&nbsp');
+            $month    = $dateHtml->find('.when-date .date-month')->text;
+            $year     = $dateHtml->find('.when-date .date-year')->text;
+            $time     = $dateHtml->find('.when-time')->text;
+            $date     = $day . '-' . $month . '-' . $year . ' ' . $time;
+            return $this->newsResponse(
+                $this->text($dom, '.news .news-inner h1'),
+                $this->text($dom, '.nav-container .nav-i.nav-i_current'),
+                preg_replace('/<h1>(.*)<\/h1>/', null, $this->innerHtml($dom, '.news .news-inner')),
+                $this->src($dom, '.news .news-img'),
+                $date,
+                $link
+            );
+        });
     }
 
     /*
-     * Report Az
+     * Milli Az
      * */
-    public function reportAz($limit = 1)
+    public function milliAz($limit = 10)
     {
         $links = $this
-            ->request('https://report.az/')
-            ->links('.latest-news .news-item .info a.title')
+            ->request('https://www.milli.az/')
+            ->links('.post-list2 li > a')
             ->limit($limit)
             ->get();
+        return $this->each($links, function ($dom, $link) {
+            return $this->newsResponse(
+                $this->text($dom, '.quiz-holder h1'),
+                $this->text($dom, '.quiz-holder .category'),
+                $this->innerHtml($dom, '.quiz-holder .article_text'),
+                $this->src($dom, '.quiz-holder .content-img'),
+                $this->text($dom, '.quiz-holder .date-info'),
+                $link,
+            );
+        });
+    }
 
-        return $links;
+    /*
+     * Apa Az
+     * */
+    public function apaAz($limit = 10)
+    {
+        $links = $this
+            ->request('https://apa.az/az')
+            ->links('.news_block .news .item')
+            ->limit($limit)
+            ->get();
+        return $this->each($links, function ($dom, $link) {
+            $dateHtml    = $this->text($dom, '.news_main .content_main .date_news .date span.date');
+            $dateExplode = explode('(', $dateHtml);
+            $date        = isset($dateExplode[0]) ? $dateExplode[0] : $dateHtml;
+            return $this->newsResponse(
+                $this->text($dom, '.news_main .title_news'),
+                $this->text($dom, '.container .breadcrumb_row h3'),
+                $this->innerHtml($dom, '.news_content .texts'),
+                $this->src($dom, '.news_main .content_main .main_img img'),
+                trim($date),
+                $link
+            );
+        });
     }
 }
