@@ -1,12 +1,12 @@
 {
-    "name": "eminazeroglu/news",
-    "description": "Muxtelif saytlardan xeberleri ceken bot",
-    "keywords": ["news", "bot"],
+    "name": "eminazeroglu/bot",
+    "description": "Bot gondermek ucun yazilmis kitabxanadir.",
+    "keywords": ["bot", "service"],
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Azeroglu\\News\\": "src/"
+            "Azeroglu\\Bot\\": "src/"
         }
     },
     "authors": [
@@ -16,17 +16,17 @@
         }
     ],
     "minimum-stability": "dev",
+    "require": {
+        "paquettg/php-html-parser": "^2.2"
+    },
     "extra": {
         "laravel": {
             "providers": [
-                "Azeroglu\\News\\NewsServiceProvider"
+                "Azeroglu\\Bot\\BotServiceProvider"
             ],
             "aliases": {
-                "News": "Azeroglu\\News\\Facades\\Telegram"
+                "Bot": "Azeroglu\\Bot\\Facades\\Telegram"
             }
         }
-    },
-    "require": {
-        "eminazeroglu/bot": "dev-main"
     }
 }

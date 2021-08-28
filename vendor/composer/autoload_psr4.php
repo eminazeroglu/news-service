@@ -6,5 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'PHPHtmlParser\\' => array($vendorDir . '/paquettg/php-html-parser/src/PHPHtmlParser'),
     'Azeroglu\\News\\' => array($baseDir . '/src'),
+    'Azeroglu\\Bot\\' => array($vendorDir . '/eminazeroglu/bot/src'),
 );

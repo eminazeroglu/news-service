@@ -7,16 +7,29 @@ namespace Composer\Autoload;
 class ComposerStaticInit3777e83bccb3d0a5ad7ce83a3d478afa
 {
     public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PHPHtmlParser\\' => 14,
+        ),
         'A' => 
         array (
             'Azeroglu\\News\\' => 14,
+            'Azeroglu\\Bot\\' => 13,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'PHPHtmlParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paquettg/php-html-parser/src/PHPHtmlParser',
+        ),
         'Azeroglu\\News\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'Azeroglu\\Bot\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/eminazeroglu/bot/src',
         ),
     );
 
@@ -26,13 +39,6 @@ class ComposerStaticInit3777e83bccb3d0a5ad7ce83a3d478afa
             'stringEncode' => 
             array (
                 0 => __DIR__ . '/..' . '/paquettg/string-encode/src',
-            ),
-        ),
-        'P' => 
-        array (
-            'PHPHtmlParser' => 
-            array (
-                0 => __DIR__ . '/..' . '/thesoftwarefanatics/php-html-parser/src',
             ),
         ),
     );

@@ -2,9 +2,9 @@
 
 namespace Azeroglu\News;
 
-use Azeroglu\News\Services\BotService;
+use Azeroglu\Bot\Bot;
 
-class News extends BotService
+class News extends Bot
 {
     /*
      * Oxu Az
