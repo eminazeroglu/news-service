@@ -9,7 +9,7 @@ class News extends BotService
     /*
      * Oxu Az
      * */
-    protected function oxuAz($limit = 5)
+    public function oxuAz($limit = 5)
     {
         $links = $this
             ->request('https://oxu.az/')

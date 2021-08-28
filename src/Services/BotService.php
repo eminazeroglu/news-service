@@ -11,7 +11,7 @@ class BotService
     protected $links = [];
     protected $page;
 
-    public function __construct()
+    protected function __construct()
     {
         $this->dom = $this->domParser();
     }
@@ -19,7 +19,7 @@ class BotService
     /*
      * Dom Parser
      * */
-    public function domParser()
+    protected function domParser()
     {
         return new Dom();
     }
@@ -27,7 +27,7 @@ class BotService
     /*
      * Request
      * */
-    public function request($url)
+    protected function request($url)
     {
         try {
             $this->html = $this->dom->load($url);
@@ -41,7 +41,7 @@ class BotService
     /*
      * Links
      * */
-    public function links($element, $prefix = null)
+    protected function links($element, $prefix = null)
     {
         try {
             $links  = $this->html->find($element);
@@ -60,7 +60,7 @@ class BotService
     /*
      * Limit
      * */
-    public function limit($limit)
+    protected function limit($limit)
     {
         $this->links = array_splice($this->links, 0, $limit);
         return $this;
@@ -69,7 +69,7 @@ class BotService
     /*
      * Get
      * */
-    public function get()
+    protected function get()
     {
         return $this->links;
     }
@@ -77,7 +77,7 @@ class BotService
     /*
      * Dom
      * */
-    public function dom($link)
+    protected function dom($link)
     {
         try {
             return $this->dom->load($link);
@@ -90,7 +90,7 @@ class BotService
     /*
      * Title
      * */
-    public function title($dom, $element)
+    protected function title($dom, $element)
     {
         try {
             return $dom->find($element)->text;
@@ -103,7 +103,7 @@ class BotService
     /*
      * Photo
      * */
-    public function photo($dom, $element)
+    protected function photo($dom, $element)
     {
         try {
             return $dom->find($element)->src;
@@ -116,7 +116,7 @@ class BotService
     /*
      * Content
      * */
-    public function content($dom, $element)
+    protected function content($dom, $element)
     {
         try {
             return $dom->find($element)->innerHtml;
@@ -129,7 +129,7 @@ class BotService
     /*
      * Date
      * */
-    public function date($dom, $element)
+    protected function date($dom, $element)
     {
         try {
             return $dom->find($element)->innerHtml;
@@ -142,7 +142,7 @@ class BotService
     /*
      * Category
      * */
-    public function category($dom, $element)
+    protected function category($dom, $element)
     {
         try {
             return $dom->find($element)->text;
