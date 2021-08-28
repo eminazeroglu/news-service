@@ -27,6 +27,6 @@
         }
     },
     "require": {
-        "eminazeroglu/bot": "dev-main"
+        "eminazeroglu/bot": "v1.0.2"
     }
 }

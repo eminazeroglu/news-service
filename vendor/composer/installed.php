@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '033bf0735d2a07f994cf66d47b586d77f03861cc',
+        'reference' => 'd05240822718ddadbdda671e5ce2cff80453f18d',
         'name' => 'eminazeroglu/news',
         'dev' => true,
     ),
@@ -27,7 +27,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '033bf0735d2a07f994cf66d47b586d77f03861cc',
+            'reference' => 'd05240822718ddadbdda671e5ce2cff80453f18d',
             'dev_requirement' => false,
         ),
         'paquettg/php-html-parser' => array(
