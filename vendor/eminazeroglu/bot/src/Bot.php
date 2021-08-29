@@ -98,10 +98,11 @@ class Bot
     /*
      * Src
      * */
-    protected function src($dom, $element): ?string
+    protected function src($dom, $element, $prefix = null): ?string
     {
         try {
-            return trim($dom->find($element)->src);
+            $photo = trim($dom->find($element)->src);
+            return $photo ? ($prefix ? $prefix . $photo : $photo) : null;
         }
         catch (\Exception $e) {
             return null;
