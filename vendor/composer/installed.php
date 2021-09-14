@@ -5,18 +5,18 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'b091039f3234a6df238289a72a59e9e1207487bd',
+        'reference' => '0138ca8cc2efb43b6315bff343ea6ae29ec9d84f',
         'name' => 'eminazeroglu/news',
         'dev' => true,
     ),
     'versions' => array(
         'eminazeroglu/bot' => array(
-            'pretty_version' => 'v1.0.4',
-            'version' => '1.0.4.0',
+            'pretty_version' => 'v1.0.8',
+            'version' => '1.0.8.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../eminazeroglu/bot',
             'aliases' => array(),
-            'reference' => '77a2e3d6ca538368892d787331d85929740ebbcd',
+            'reference' => 'f719be76f0a5a285d1a5d8e5698883589b0f0ccb',
             'dev_requirement' => false,
         ),
         'eminazeroglu/news' => array(
@@ -25,7 +25,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'b091039f3234a6df238289a72a59e9e1207487bd',
+            'reference' => '0138ca8cc2efb43b6315bff343ea6ae29ec9d84f',
             'dev_requirement' => false,
         ),
         'paquettg/php-html-parser' => array(

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fff2cb8a8508745d96a79987539b341a",
+    "content-hash": "b69ed1bd16843482dc47540373dcdc18",
     "packages": [
         {
             "name": "eminazeroglu/bot",
-            "version": "v1.0.4",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eminazeroglu/bot-service.git",
-                "reference": "77a2e3d6ca538368892d787331d85929740ebbcd"
+                "reference": "f719be76f0a5a285d1a5d8e5698883589b0f0ccb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eminazeroglu/bot-service/zipball/77a2e3d6ca538368892d787331d85929740ebbcd",
-                "reference": "77a2e3d6ca538368892d787331d85929740ebbcd",
+                "url": "https://api.github.com/repos/eminazeroglu/bot-service/zipball/f719be76f0a5a285d1a5d8e5698883589b0f0ccb",
+                "reference": "f719be76f0a5a285d1a5d8e5698883589b0f0ccb",
                 "shasum": ""
             },
             "require": {
@@ -56,9 +56,9 @@
             ],
             "support": {
                 "issues": "https://github.com/eminazeroglu/bot-service/issues",
-                "source": "https://github.com/eminazeroglu/bot-service/tree/v1.0.4"
+                "source": "https://github.com/eminazeroglu/bot-service/tree/v1.0.8"
             },
-            "time": "2021-08-29T08:36:50+00:00"
+            "time": "2021-08-29T11:02:03+00:00"
         },
         {
             "name": "paquettg/php-html-parser",

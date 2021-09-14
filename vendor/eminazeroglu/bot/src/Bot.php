@@ -123,6 +123,19 @@ class Bot
     }
 
     /*
+     * Outer Html
+     * */
+    protected function outerHtml($dom, $element): ?string
+    {
+        try {
+            return trim($dom->find($element)->outerHtml);
+        }
+        catch (\Exception $e) {
+            return null;
+        }
+    }
+
+    /*
      * Each
      * */
     protected function each($links, $callback): ?array
@@ -145,9 +158,9 @@ class Bot
     /*
      * Response
      * */
-    protected function newsResponse($title, $category, $content, $photo, $date, $link): array
+    protected function newsResponse($title, $category, $content, $photo, $date, $link, $language = null): array
     {
-        return [
+        $response = [
             'title'    => $title,
             'category' => $category,
             'content'  => $content,
@@ -155,5 +168,8 @@ class Bot
             'date'     => $date,
             'link'     => $link,
         ];
+        if ($language)
+            $response = array_merge($response, ['language' => $language]);
+        return $response;
     }
 }
